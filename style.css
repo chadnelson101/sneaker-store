@@ -24,21 +24,23 @@
     flex-direction: column;
  }
  .nav{
-    padding: 1rem 0;
+    padding: 1px;
     display: flex;
     align-items: center;
     justify-content: space-between;
- }
- .logo{
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--white);
-    cursor: pointer;
- }
- .links{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+   }
+   .logo{
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+   }
+   .links{
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-right: 100px;
+      color: var(--white);
  }
  .links div{
     font-size: 0.9rem;
