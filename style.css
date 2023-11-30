@@ -23,6 +23,7 @@
    transition: 0.5s;
    padding-left: 10px;
    overflow: hidden;
+   z-index: 10000;
  }
  .sidebar.active{
    width: 300px;
@@ -64,6 +65,9 @@
 }
 .logo{
    margin-bottom: 50px;
+}
+.logo span{
+   color: black;
 }
 .icon{
    font-size: 1rem;
@@ -174,10 +178,13 @@
  }
 
    .logo{
+      position: relative;
       font-size: 1.5rem;
       font-weight: 600;
       color: var(--white);
       cursor: pointer;
+      left: 2rem;
+      z-index: -10000;
    }
  .content{
     position: relative;
@@ -189,6 +196,8 @@
     width: 100%;
     animation: shoe-animation 3s infinite;
     overflow: hidden;
+    position: relative;
+    left: 10%;
  }
  .image img{
     width: 100%;
@@ -210,8 +219,8 @@
  }
  .header{
     position: absolute;
-    top: 7rem;
-    left: 30%;
+    top: 3rem;
+    left: 35%;
     transform: translateX(-50%);
  }
  .header h1{
@@ -231,6 +240,8 @@
  .featured__items{
     position: absolute;
     transform: rotate(-90deg);
+    top: 55%;
+    left: 10%;
  }  
  .featured__items h4{
     font-size: 1.5rem;
@@ -293,6 +304,7 @@
    .image {
        position: relative;
        z-index: -10000; /* Lower z-index for the image to go behind the sidebar */
+       left: -2rem;
    }
 
    .sidebar {
