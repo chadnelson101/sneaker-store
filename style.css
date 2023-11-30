@@ -144,7 +144,7 @@
    transform: translateY(0px) rotate(45deg);
    box-shadow: 0 0 0 #fff;
 }
-.menuToggle.Toggle.active::after{
+.menuToggle.active::after{
    transform: translateY(0px) rotate(-45deg);
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -172,48 +172,13 @@
     display: flex;
     flex-direction: column;
  }
- .nav{
-    padding: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   }
+
    .logo{
       font-size: 1.5rem;
       font-weight: 600;
       color: var(--white);
       cursor: pointer;
    }
-   .links{
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      margin-right: 100px;
-      color: var(--white);
- }
- .links div{
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--white);
-    cursor: pointer;
-    transition: 0.3s;
- }
- .links div:hover{
-    color: var(--secondary-color);
- }
- .links div span{
-    font-size: 1.2rem;
- }
- .links .shopping__cart{
-    height: 50px;
-    width: 50px;
-    display: grid;
-    place-content: center;
-    border-radius: 100%;
-    font-size: 1.2rem;
-    color: var(--primary-color-dark);
-    background-color: var(--white);
- }
  .content{
     position: relative;
     flex: 1;
@@ -296,50 +261,56 @@
     background-color: var(--white);
     transform: rotate(90deg);
  }
- .footer{
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- }
- .soials{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
- }
- .soials span{
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--white);
-    cursor: pointer;
-    transition: 0.3s;
- }
- .soials span:hover{
-    color: var(--primary-color-dark);
- }
- .slides{
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--white);
- }
- .slides span{
-    font-size: 1rem;
-    font-weight: 400;
- }
- @media (width <640px) {
-    .links div:not(.shopping__cart){
-        display: none;
-    }
-    
-    .header{
-        top: 1rem;
-    }
+ 
+ @media  (width <640px) {
+   /* Adjustments for smaller screens */
+   .logo {
+       margin-left: 1rem;
+   }
 
-    .featured__items{
-        left: -5rem;
-    }
+   .header {
+       left: 50%;
+       transform: translateX(-50%);
+       text-align: center;
+       top: 20rem;
+   }
+   .header p{
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+   }
 
-    .contact{
-        right: -4rem;
-    }
- }
+   .featured__items {
+       left: -20%;
+       top: 70px;
+   }
+
+   .container {
+       position: relative;
+       z-index: 1; /* Set a higher z-index for the content */
+   }
+
+   .image {
+       position: relative;
+       z-index: -10000; /* Lower z-index for the image to go behind the sidebar */
+   }
+
+   .sidebar {
+       position: fixed; /* Fix the sidebar to the screen */
+       top: 0px;
+       left: -200px; /* Hide the sidebar off-screen initially */
+       width: 200px;
+       height: 100vh;
+       background-color: #ffffff;
+       transition: 0.5s;
+       z-index: 10000; /* Set a higher z-index for the sidebar to overlay the content */
+   }
+
+   .sidebar.active {
+       left: 0; /* Show the sidebar when active */
+   }
+
+   .image img {
+       max-width: 100%; /* Ensure the image takes full width */
+   }
+}
